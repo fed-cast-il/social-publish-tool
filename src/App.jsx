@@ -1,43 +1,35 @@
-import { useState } from 'react'
-import logo from './logo.svg'
 import './App.css'
+import Table from './components/Table';
+import TextArea from './components/TextArea';
+import Button from '@mui/material/Button';
+import Collapsible from 'react-collapsible';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <h1>FedTool</h1>
+      <div className="container">
+        <div className="sectionOne">
+          <TextArea />
+          <Table />
+          <Button variant="contained" style={{ marginRight: "10px"}}>Add Destination</Button>
+          <Button variant="contained">Publish Selected</Button>
+        </div>
+        <div className="sectionTwo">
+          <h3>Logs Panel</h3>
+          <Collapsible trigger="Show logs" triggerWhenOpen="Close" transitionTime="100">
+            <p>
+              This is the collapsible content.
+              It can be any element or React
+              component you like.
+            </p>
+            <p>
+              It can even be another Collapsible component.
+            </p>
+          </Collapsible>
+        </div>
+      </div>
     </div>
   )
 }
