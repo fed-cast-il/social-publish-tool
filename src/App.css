@@ -4,41 +4,14 @@
   margin: 0;
   padding: 0;
   text-align: center;
-  display: flex;
   align-items: center;
-  flex-direction: column;
   font-family: "Roboto", Helvetica, sans-serif;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  /* flex-wrap: nowrap; */
-  width: 100%;
-}
-
-.sectionOne {
-  flex-basis: 80%;
-  flex-direction: column;
-}
-
-.sectionTwo {
-  flex-basis: 20%;
-}
-
-.textArea {
-  flex-direction: column;
 }
 
 h1 {
   font-weight: 100;
 }
 
-.Collapsible__trigger { 
+.Collapsible__trigger {
   cursor: pointer;
 }
-
-/* .multiplePublishButtons{
-  display: flex;
-  direction: column;
-} */

@@ -1,22 +1,25 @@
 import './App.css'
-import Table from './components/Table';
-import TextArea from './components/TextArea';
-import Button from '@mui/material/Button';
+import PlatformsTable from './components/PlatformsTable';
+import InputsBox from './components/InputsBox';
 import Collapsible from 'react-collapsible';
+import { Button, Grid } from '@mui/material';
 
 function App() {
 
   return (
     <div className="App">
       <h1>FedTool</h1>
-      <div className="container">
-        <div className="sectionOne">
-          <TextArea />
-          <Table />
-          <Button variant="contained" style={{ marginRight: "10px"}}>Add Destination</Button>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={8}>
+
+          <InputsBox />
+          <PlatformsTable />
+          <Button variant="contained" style={{ marginRight: "10px" }}>Add Destination</Button>
           <Button variant="contained">Publish Selected</Button>
-        </div>
-        <div className="sectionTwo">
+
+        </Grid>
+        <Grid item xs={12} md={4}>
+
           <h3>Logs Panel</h3>
           <Collapsible trigger="Show logs" triggerWhenOpen="Close" transitionTime="100">
             <p>
@@ -28,8 +31,9 @@ function App() {
               It can even be another Collapsible component.
             </p>
           </Collapsible>
-        </div>
-      </div>
+
+        </Grid>
+      </Grid>
     </div>
   )
 }
