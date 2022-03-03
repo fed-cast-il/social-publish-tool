@@ -23,8 +23,9 @@ export default function InputsBox() {
           style={{ width: "90%", height: 50, marginBottom: 10, textTransform: "none" }}>
 
           Upload Image
-          <input
+          <input 
             type="file"
+            hidden
           />
 
         </Button>
