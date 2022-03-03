@@ -15,15 +15,20 @@ export default function InputsBox() {
   return (
     <Grid container spacing={1}>
       <Grid item xs={12} md={4}>
-        <TextareaAutosize
-          aria-label="empty textarea"
-          placeholder="Write your post content here"
-          style={{ width: "90%", height: 100 }}
+        <TextField
+          id="outlined-basic"
+          label="Your Text"
+          multiline
+          style={{ width: "90%" }}
         />
       </Grid>
 
       <Grid item xs={12} md={4}>
-        <TextField id="outlined-basic" label="Url address" multiline variant="outlined" style={{ width: "90%" }} />
+        <TextField
+          id="outlined-basic"
+          label="Url address"
+          multiline
+          style={{ width: "90%" }} />
       </Grid>
 
       <Grid item xs={12} md={4}>
