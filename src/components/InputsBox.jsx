@@ -1,15 +1,15 @@
-import { Button, Grid, TextField, Box } from '@mui/material';
-
+import { Button, Grid, TextField, Box, Alert } from '@mui/material';
 import { useState } from 'react';
 
 export default function InputsBox() {
     const [imageUrl, setImageUrl] = useState(null)
+    const [alert, setAlert] = useState(false)
 
   function onImageChange(file) {
-    if(file && file['type'].split('/')[0] === 'image'){
+    if(file && file.type.split('/')[0] === 'image'){
       setImageUrl(URL.createObjectURL(file))
     } else {
-      alert ('This is not image file');
+      setAlert(true)
     }
 }
 
@@ -46,6 +46,8 @@ export default function InputsBox() {
             onChange={e => onImageChange(e.target.files[0])}
           />
         </Button>
+
+       {alert ? <Alert style={{ marginBottom: 7 }} severity="error">This is not an image file</Alert> : null} 
 
         {imageUrl && (
           <Box mt={0} textAlign="center">
