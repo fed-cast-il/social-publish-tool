@@ -1,25 +1,28 @@
 import { Button, Grid, TextField, Box, Alert } from '@mui/material';
+import TextareaAutosize from '@mui/material/TextareaAutosize';
 import { useState } from 'react';
 
 export default function InputsBox() {
-    const [imageUrl, setImageUrl] = useState(null)
-    const [alert, setAlert] = useState(false)
+  const [imageUrl, setImageUrl] = useState(null)
+  const [alert, setAlert] = useState(false)
 
   function onImageChange(file) {
-    if(file && file.type.split('/')[0] === 'image'){
+    setAlert(false)
+    setImageUrl('')
+
+    if (file.type.split('/')[0] === 'image') {
       setImageUrl(URL.createObjectURL(file))
     } else {
       setAlert(true)
     }
-}
+  }
 
   return (
     <Grid container spacing={1}>
       <Grid item xs={12} md={4}>
-        <TextField
+        <TextareaAutosize
           id="outlined-basic"
           label="Your Text"
-          multiline
           style={{ width: "90%" }}
         />
       </Grid>
@@ -47,7 +50,7 @@ export default function InputsBox() {
           />
         </Button>
 
-       {alert ? <Alert style={{ marginBottom: 7 }} severity="error">This is not an image file</Alert> : null} 
+        {alert ? <Alert style={{ marginBottom: 7 }} severity="error">This is not an image file</Alert> : null}
 
         {imageUrl && (
           <Box mt={0} textAlign="center">
@@ -56,7 +59,7 @@ export default function InputsBox() {
           </Box>)}
 
       </Grid>
-      
+
     </Grid>
   );
 }
