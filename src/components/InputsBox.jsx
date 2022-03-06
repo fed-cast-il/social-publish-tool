@@ -1,16 +1,16 @@
 import { Button, Grid, TextField, Box } from '@mui/material';
-import TextareaAutosize from '@mui/material/TextareaAutosize';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function InputsBox() {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [imageUrl, setImageUrl] = useState(null)
+    const [imageUrl, setImageUrl] = useState(null)
 
-  useEffect(() => {
-    if (selectedImage) {
-      setImageUrl(URL.createObjectURL(selectedImage));
+  function onImageChange(file) {
+    if(file && file.type.split('/')[0] === 'image'){
+      setImageUrl(URL.createObjectURL(file))
+    } else {
+      alert ('This is not image file');
     }
-  }, [selectedImage]);
+}
 
   return (
     <Grid container spacing={1}>
@@ -42,18 +42,18 @@ export default function InputsBox() {
           <input
             type="file"
             hidden
-            onChange={e => setSelectedImage(e.target.files[0])}
+            onChange={e => onImageChange(e.target.files[0])}
           />
         </Button>
 
         {imageUrl && (
           <Box mt={0} textAlign="center">
             <div>Image Preview:</div>
-            <img src={imageUrl} alt={selectedImage.name} className="imgPreview" />
+            <img src={imageUrl} alt={imageUrl.name} className="imgPreview" />
           </Box>)}
 
       </Grid>
-
+      
     </Grid>
   );
 }
