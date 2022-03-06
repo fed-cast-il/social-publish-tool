@@ -15,3 +15,8 @@ h1 {
 .Collapsible__trigger {
   cursor: pointer;
 }
+
+.imgPreview {
+  height: 160px;
+  border-radius: 3%;
+}
