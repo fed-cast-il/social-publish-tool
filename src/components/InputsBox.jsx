@@ -18,12 +18,13 @@ export default function InputsBox() {
   }
 
   return (
-    <Grid container spacing={1}>
+    <Grid container spacing={2}>
       <Grid item xs={12} md={4}>
-        <TextareaAutosize
+        <TextField
           id="outlined-basic"
           label="Your Text"
-          style={{ width: "90%" }}
+          multiline
+          fullWidth 
         />
       </Grid>
 
@@ -31,8 +32,8 @@ export default function InputsBox() {
         <TextField
           id="outlined-basic"
           label="Url address"
-          multiline
-          style={{ width: "90%" }} />
+          fullWidth 
+         />
       </Grid>
 
       <Grid item xs={12} md={4}>
@@ -40,7 +41,7 @@ export default function InputsBox() {
         <Button
           variant="contained"
           component="label"
-          style={{ width: "90%", height: 50, marginBottom: 10, textTransform: "none" }}>
+          style={{ height: 50, marginBottom: 10, width: '100%' }}>
 
           Upload Image
           <input
