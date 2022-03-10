@@ -1,5 +1,4 @@
 import { Button, Grid, TextField, Box, Alert } from '@mui/material';
-import TextareaAutosize from '@mui/material/TextareaAutosize';
 import { useState } from 'react';
 
 export default function InputsBox() {
