@@ -43,7 +43,7 @@ const columns = [
 export default function PlatformsTable() {
 
   return (
-    <div style={{ height: 590, width: '100%', marginBottom: 10 }}>
+    <div style={{ height: 610, width: '100%', marginBottom: 10 }}>
       <DataGrid
         id="idTable"
         rows={rows}
