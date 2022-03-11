@@ -1,5 +1,4 @@
 import { Button, Grid, TextField, Box, Alert } from '@mui/material';
-import TextareaAutosize from '@mui/material/TextareaAutosize';
 import { useState } from 'react';
 
 export default function InputsBox() {
@@ -24,7 +23,7 @@ export default function InputsBox() {
           id="outlined-basic"
           label="Your Text"
           multiline
-          fullWidth 
+          fullWidth
         />
       </Grid>
 
@@ -32,8 +31,8 @@ export default function InputsBox() {
         <TextField
           id="outlined-basic"
           label="Url address"
-          fullWidth 
-         />
+          fullWidth
+        />
       </Grid>
 
       <Grid item xs={12} md={4}>
